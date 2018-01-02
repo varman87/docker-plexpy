@@ -3,6 +3,7 @@ FROM lsiobase/alpine.python:3.7
 # set version label
 ARG BUILD_DATE
 ARG VERSION
+ARG GIT_BRANCH=master
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
@@ -17,7 +18,7 @@ RUN \
  pip install --no-cache-dir -U \
 	pycryptodomex && \
  echo "**** install app ****" && \
- git clone --depth 1 https://github.com/JonnyWong16/plexpy /app/plexpy && \
+ git clone --branch $GIT_BRANCH --depth 1 https://github.com/JonnyWong16/plexpy /app/plexpy && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
