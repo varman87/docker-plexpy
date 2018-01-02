@@ -3,7 +3,7 @@ FROM lsiobase/alpine.python:3.7
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG GIT_BRANCH=master
+ARG GIT_BRANCH=nightly
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
